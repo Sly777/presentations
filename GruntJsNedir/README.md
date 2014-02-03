@@ -1,6 +1,6 @@
 # Grunt.Js - Front-end işlerinizi hızlandırmanın en basit yolu
 
-Yemeksepeti Frontend Community toplantısında yaptığım 'Grunt.Js:Front-end işlerinizi hızlandırmanın en basit yolu' adlı sunumuma [bu adresten](http://sly777.github.io/presentations/gruntjsnedir/) ulaşabilirsiniz.
+Yemeksepeti Frontend Community toplantısında yaptığım 'Grunt.Js:Front-end işlerinizi hızlandırmanın en basit yolu' adlı sunumuma [bu adresten](http://sly777.github.io/presentations/GruntJsNedir/) ulaşabilirsiniz.
 
 ## Konu Başlıkları
 
