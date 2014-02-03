@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Grunt.js Nedir? by Ilker Guller</title>
+  <meta name="description" content="Grunt.Js Nedir? by Ilker Guller">
+  <meta name="keyword" content="grunt, javascript, yemeksepeti, ilker, guller, yeoman">
+  <meta name="author" content="Ilker Guller">
+  <meta property="og:title" content="Grunt.Js Nedir? by Ilker Guller"/>
+  <meta property="og:site_name" content="Ilker Guller Blog"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <span>YEMEKSEPETİ FRONTEND COMMUNITY</span><br><br>
+      <img src="imgs/grunt-logo.png" width="200" height="200">
+
+      <h1>Grunt.js</h1>
+      <h3>Front-end işlerinizi hızlandırmanın en basit yolu</h3>
+      <p>
+        <small><a href="http://ilkerguller.com">İlker Güller</a> / <a
+            href="http://twitter.com/the_bluescreen">@the_bluescreen</a></small>
+      </p>
+    </section>
+
+    <section>
+      <h2>Bugün nelerden bahsedilecek;</h2>
+      <ul>
+        <li>Grunt.js Nedir?</li>
+        <li>Grunt.js Kurulumu</li>
+        <li>Neden Kullanmalıyım?</li>
+        <li>Neler yapılabilir?</li>
+        <li>Bonus: Daha basit olsun!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Grunt.js Nedir?</h2>
+      <ul>
+        <li>JS Task Runner (Görev Çalıştırıcı?)</li>
+        <li>Komut satırında çalışır</li>
+        <li>Node.Js ile birlikte kullanılır</li>
+        <li>NPM üzerinden birçok plugin mevcut</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Grunt.js Kurulumu</h2>
+
+      <p>Node.js kurulumu yapıldıktan sonra;</p>
+
+      <pre><code data-trim>
+        npm install -g grunt-cli
+      </code></pre>
+
+      <p>veya proje klasörünüzde package.json yaratıp içine;</p>
+
+      <pre><code data-trim>
+{
+  "name": "ProjeIsmi",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  }
+}
+      </code></pre>
+
+      <p>Sonrasında ise;</p>
+
+      <pre><code data-trim>
+        npm install
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Grunt.js Kurulumu</h2>
+
+      <p><b>Package.json</b> ile kurulum sayesinde;<br><br></p>
+
+      <ul>
+        <li>Proje bazlı kurulmuş olur</li>
+        <li>Pluginlerin yönetimi basit olur</li>
+        <li>Kısaca derli toplu!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Neden Kullanmalıyım?</h2>
+    </section>
+
+    <section>
+      <h3>En önemlisi Javascript!</h3>
+
+      <pre><code data-trim>
+module.exports = function(grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: 'src/<%= pkg.name %>.js',
+      dest: 'build/<%= pkg.name %>.min.js'
+      }
+    }
+  });
+
+  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Default task(s).
+  grunt.registerTask('default', ['uglify']);
+
+};
+      </code></pre>
+
+      <h5>Frontend'in python, ant, rake öğrenmesine ne gerek var?</h5>
+
+      <pre></pre>
+    </section>
+
+    <section>
+      <h3>Diğer Güzellikleri<br></h3>
+
+      <ul>
+        <li>Kolaylık, Hız, Düzen</li>
+        <li>Birçok Plugin</li>
+        <li>Open Source</li>
+        <li>Büyük Topluluğa Sahip</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Neler Yapılabilir?</h2>
+
+      <h1 class="fragment">HERŞEY</h1>
+    </section>
+
+    <section>
+      <h2>Neler Yapılabilir?</h2>
+
+      <ul>
+        <li>Unit Test</li>
+        <li>JS Sıkıştırma</li>
+        <li>Imaj Optimizasyon</li>
+        <li>SASS, LESS Derleme</li>
+        <li>Html'leri Düzenleme</li>
+        <li>Versiyonlama</li>
+        <li>...vs.vs.</li>
+      </ul>
+    </section>
+
+    <section>
+      <blockquote>
+        Burada anlatan arkadaş slide'da gösterilemeyecek canlı testler yapar...
+      </blockquote>
+      <br>
+      <blockquote class="fragment">
+        Çünkü Grunt.js clientside bir yapıda değildir...
+      </blockquote>
+    </section>
+
+    <section>
+      <h1>Bonus</h1>
+
+      <h2>Daha basit olsun!</h2>
+    </section>
+
+    <section>
+      <img src="imgs/yeoman-logo.png" width="200" height="200">
+
+      <h2>Yeoman!</h2>
+
+      <a href="http://yeoman.io/" target="_blank">http://yeoman.io/</a><br><br>
+
+      <p>Hızlı bir şekilde projelerinizin temelini oluşturun.</p>
+
+      <p>Hem de herkesin destek verdiği yapılarda.</p>
+    </section>
+
+    <section>
+      <h2>Yeoman!</h2>
+
+      <p>Aslında birnevi üç sistemin birleşimi de diyebiliriz.</p><br>
+
+      <ul>
+        <li><b>Yo</b> : Projenin iskeletini oluşturmak için</li>
+        <li><b>Bower</b> : Kullandığınız pluginlerin, librarylerin yönetimi için</li>
+        <li><b>Grunt</b> : Projenizi derlemek, göstermek, test etmek için</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Yeoman Kurulumu</h2>
+
+      <p>Gerekli olanlar;</p>
+
+      <ul>
+        <li>Node.js</li>
+        <li>Git</li>
+      </ul>
+      <br><br>
+      <p>Bunlar kuruluysa komut satırında tek yapmanız gereken;</p>
+
+      <pre><code data-trim>
+        npm install -g yo
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Yeoman Kullanımı</h2>
+
+      <p>Sonrasında ise sadece '<b>yo</b>' komutunu kullanarak çalıştırabilirsiniz.</p>
+
+      <img src="imgs/yogosterimi.png" width="677" height="340">
+
+      <p class="fragment">Devamı bir dahaki sunuma...</p>
+    </section>
+
+    <section>
+      <h1>Teşekkürler</h1>
+      <br><br>
+      <h5>İlker Güller / <a href="http://ilkerguller.com" target="_blank">ilkerguller.com</a></h5>
+    </section>
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: false,
+    progress: true,
+    history: true,
+    center: true,
+    slideNumber: true,
+    theme: Reveal.getQueryHash().theme || 'moon', // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function () {
+        return !document.body.classList;
+      } },
+      { src: 'plugin/markdown/marked.js', condition: function () {
+        return !!document.querySelector('[data-markdown]');
+      } },
+      { src: 'plugin/markdown/markdown.js', condition: function () {
+        return !!document.querySelector('[data-markdown]');
+      } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+        hljs.initHighlightingOnLoad();
+      } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+        return !!document.body.classList;
+      } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function () {
+        return !!document.body.classList;
+      } }
+    ]
+  });
+</script>
+
+</body>
+</html>
